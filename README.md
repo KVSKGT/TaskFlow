@@ -80,4 +80,4 @@ Open `http://localhost:5173`, sign up, and start creating tasks.
 ---
 
 ## Live Link
-_Add your deployed URL here after deploying (see mentoring guide for quick Render/Vercel steps)._
+**Live Frontend:** [https://task-flow-frontend-orpin-nine.vercel.app/](https://task-flow-frontend-orpin-nine.vercel.app/)
