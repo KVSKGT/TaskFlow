@@ -74,7 +74,7 @@ export default function Tasks() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="w-full px-6 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Your Tasks</h1>
         <button

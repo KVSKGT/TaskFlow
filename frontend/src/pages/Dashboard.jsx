@@ -26,7 +26,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="w-full px-6 py-8">
       <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">
         Welcome, {user?.name?.split(" ")[0]} 👋
       </h1>
