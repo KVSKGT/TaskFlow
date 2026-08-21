@@ -39,8 +39,8 @@ export default function TaskForm({ initialTask, onSubmit, onClose }) {
 
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/40 p-4">
-      <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl dark:bg-slate-900">
-        <h2 className="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
+      <div className="w-full max-w-md rounded-xl border border-black bg-white p-6 shadow-xl dark:border-white dark:bg-black">
+        <h2 className="mb-4 text-lg font-bold text-black dark:text-white">
           {initialTask ? "Edit Task" : "New Task"}
         </h2>
 
@@ -52,36 +52,36 @@ export default function TaskForm({ initialTask, onSubmit, onClose }) {
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
-            <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Title</label>
+            <label className="text-sm font-medium text-black dark:text-white">Title</label>
             <input
               name="title"
               value={form.title}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
               placeholder="e.g. Finish API docs"
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Description</label>
+            <label className="text-sm font-medium text-black dark:text-white">Description</label>
             <textarea
               name="description"
               value={form.description}
               onChange={handleChange}
               rows={3}
-              className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
               placeholder="Optional details..."
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Status</label>
+              <label className="text-sm font-medium text-black dark:text-white">Status</label>
               <select
                 name="status"
                 value={form.status}
                 onChange={handleChange}
-                className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                className="mt-1 w-full rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
               >
                 <option>Todo</option>
                 <option>In Progress</option>
@@ -90,12 +90,12 @@ export default function TaskForm({ initialTask, onSubmit, onClose }) {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Priority</label>
+              <label className="text-sm font-medium text-black dark:text-white">Priority</label>
               <select
                 name="priority"
                 value={form.priority}
                 onChange={handleChange}
-                className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                className="mt-1 w-full rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
               >
                 <option>Low</option>
                 <option>Medium</option>
@@ -105,14 +105,14 @@ export default function TaskForm({ initialTask, onSubmit, onClose }) {
           </div>
 
           <div>
-            <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Due Date</label>
+            <label className="text-sm font-medium text-black dark:text-white">Due Date</label>
             <input
               type="date"
               name="dueDate"
               value={form.dueDate}
               min={new Date().toISOString().split("T")[0]}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+              className="mt-1 w-full rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
             />
           </div>
 
@@ -120,13 +120,13 @@ export default function TaskForm({ initialTask, onSubmit, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="rounded-md px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="rounded-md border border-transparent px-4 py-2 text-sm font-medium text-black transition-colors hover:border-black dark:text-white dark:hover:border-white"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
+              className="rounded-md border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
             >
               {initialTask ? "Save Changes" : "Create Task"}
             </button>

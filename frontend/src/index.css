@@ -7,5 +7,5 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200;
+  @apply bg-white text-black dark:bg-black dark:text-white transition-colors duration-200;
 }

@@ -76,13 +76,13 @@ export default function Tasks() {
   return (
     <div className="w-full px-6 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Your Tasks</h1>
+        <h1 className="text-2xl font-extrabold text-black dark:text-white">Your Tasks</h1>
         <button
           onClick={() => {
             setEditingTask(null);
             setShowForm(true);
           }}
-          className="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
+          className="rounded-md border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
         >
           + New Task
         </button>
@@ -94,12 +94,12 @@ export default function Tasks() {
           placeholder="Search by title..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+          className="rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
         />
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+          className="rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
         >
           <option value="">All statuses</option>
           <option>Todo</option>
@@ -109,7 +109,7 @@ export default function Tasks() {
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+          className="rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
         >
           <option value="">All priorities</option>
           <option>Low</option>
@@ -119,7 +119,7 @@ export default function Tasks() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+          className="rounded-md border border-black bg-white px-3 py-2 text-sm text-black dark:border-white dark:bg-black dark:text-white"
         >
           <option value="createdAt">Sort: Newest</option>
           <option value="dueDate">Sort: Due Date</option>
@@ -128,7 +128,7 @@ export default function Tasks() {
         </select>
         <button
           onClick={() => setOrder((o) => (o === "asc" ? "desc" : "asc"))}
-          className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+          className="rounded-md border border-black bg-white px-3 py-2 text-sm text-black transition-colors hover:bg-black hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
         >
           {order === "asc" ? "↑ Asc" : "↓ Desc"}
         </button>
@@ -141,7 +141,7 @@ export default function Tasks() {
               setSortBy("createdAt");
               setOrder("desc");
             }}
-            className="rounded-md text-sm font-medium text-slate-500 transition-colors hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+            className="rounded-md text-sm font-medium text-black underline transition-colors hover:opacity-70 dark:text-white"
           >
             Clear filters
           </button>
@@ -149,21 +149,21 @@ export default function Tasks() {
       </div>
 
       {/* Loading / Error / Empty states */}
-      {loading && <p className="mt-8 text-slate-500">Loading tasks...</p>}
+      {loading && <p className="mt-8 text-black dark:text-white">Loading tasks...</p>}
       {error && (
         <div className="mt-8 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-300">
           {error}
         </div>
       )}
       {!loading && !error && tasks.length === 0 && (
-        <div className="mt-8 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-12 text-center dark:border-slate-700 dark:bg-slate-800/50">
-          <p className="text-lg font-medium text-slate-600 dark:text-slate-300">No tasks yet-let's get started!</p>
+        <div className="mt-8 rounded-lg border border-dashed border-black bg-white p-12 text-center dark:border-white dark:bg-black">
+          <p className="text-lg font-medium text-black dark:text-white">No tasks yet-let's get started!</p>
           <button
             onClick={() => {
               setEditingTask(null);
               setShowForm(true);
             }}
-            className="mt-4 rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-brand-700"
+            className="mt-4 rounded-md border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
           >
             + New Task
           </button>
@@ -194,17 +194,17 @@ export default function Tasks() {
           <button
             disabled={page <= 1}
             onClick={() => setPage((p) => p - 1)}
-            className="rounded-md border border-slate-300 px-3 py-1.5 text-sm disabled:opacity-40 dark:border-slate-700"
+            className="rounded-md border border-black bg-white px-3 py-1.5 text-sm text-black transition-colors hover:bg-black hover:text-white disabled:opacity-40 dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
           >
             Previous
           </button>
-          <span className="text-sm text-slate-500">
+          <span className="text-sm text-black dark:text-white">
             Page {page} of {totalPages}
           </span>
           <button
             disabled={page >= totalPages}
             onClick={() => setPage((p) => p + 1)}
-            className="rounded-md border border-slate-300 px-3 py-1.5 text-sm disabled:opacity-40 dark:border-slate-700"
+            className="rounded-md border border-black bg-white px-3 py-1.5 text-sm text-black transition-colors hover:bg-black hover:text-white disabled:opacity-40 dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
           >
             Next
           </button>

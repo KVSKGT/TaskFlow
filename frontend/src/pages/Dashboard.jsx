@@ -27,12 +27,12 @@ export default function Dashboard() {
 
   return (
     <div className="w-full px-6 py-8">
-      <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">
+      <h1 className="text-2xl font-extrabold text-black dark:text-white">
         Welcome, {user?.name?.split(" ")[0]} 👋
       </h1>
-      <p className="mt-1 text-slate-500 dark:text-slate-400">Here's a snapshot of your tasks.</p>
+      <p className="mt-1 text-black dark:text-white">Here's a snapshot of your tasks.</p>
 
-      {loading && <p className="mt-8 text-slate-500">Loading analytics...</p>}
+      {loading && <p className="mt-8 text-black dark:text-white">Loading analytics...</p>}
       {error && (
         <div className="mt-8 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-300">
           {error}
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
       {analytics && !loading && (
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <StatsCard label="Total Tasks" value={analytics.total} accent="brand" />
+          <StatsCard label="Total Tasks" value={analytics.total} accent="black" />
           <StatsCard label="Completed" value={analytics.completed} accent="green" />
           <StatsCard label="Pending" value={analytics.pending} accent="amber" />
           <StatsCard label="Completion %" value={`${analytics.completionPercentage}%`} accent="slate" />
@@ -49,11 +49,11 @@ export default function Dashboard() {
       )}
 
       {analytics && !loading && (
-        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-          <p className="mb-2 text-sm font-medium text-slate-500 dark:text-slate-400">Progress</p>
-          <div className="h-3 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+        <div className="mt-6 rounded-xl border border-black bg-white p-5 dark:border-white dark:bg-black">
+          <p className="mb-2 text-sm font-medium text-black dark:text-white">Progress</p>
+          <div className="h-3 w-full overflow-hidden rounded-full border border-black bg-white dark:border-white dark:bg-black">
             <div
-              className="h-full rounded-full bg-brand-500 transition-all"
+              className="h-full rounded-full bg-black dark:bg-white transition-all"
               style={{ width: `${analytics.completionPercentage}%` }}
             />
           </div>
